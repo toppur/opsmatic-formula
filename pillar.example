@@ -1,0 +1,11 @@
+opsmatic.groups:
+{% if  grains['id'] == "app01" %}
+  - sfo
+  - west 
+{% elif  grains['id'] == "db01" %}
+  - sjc
+  - west 
+{% elif  grains['id'] == "app02" %}
+  - boston 
+  - east 
+{% endif %}
