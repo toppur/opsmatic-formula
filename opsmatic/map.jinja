@@ -1,3 +1,12 @@
+#
+# replace with opsmatic key
+#
+opsmatic-key: xxx-your-opsmatic-key-here-xxx  
+
+
+#
+# set up groups
+#
 {% set opsmatic = salt['grains.filter_by']({
     'default': {
         'config': '/etc/opsmatic-agent.conf',

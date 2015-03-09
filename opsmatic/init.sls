@@ -42,7 +42,7 @@ install-opsmatic-agent:
 create-opsmatic-key:
   cmd.run:
     - cwd: /
-    - name: config-opsmatic-agent -token=xxxx-xxxx-your-secret-key-xxxx
+    - name: config-opsmatic-agent -token={{ salt['pillar.get']('opsmatic-key', 'xxxx-xxxx-your-secret-key-xxxx') }}
     - unless: test -f /var/db/opsmatic-agent/identity/client-key.key
 
 # Configure. Derive host alias from salt ID, group from pillar
